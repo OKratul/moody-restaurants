@@ -6,7 +6,10 @@ body{
     padding: 0px !important;
 }
 .navbar{
-    padding: 25px 0px !important;
+    padding: 0px 0px !important;
+    display: grid;
+    align-items: flex-start !important;
+    padding-top: 25px !important;
 }
 .navbar-brand{
  font-size: 30px !important;
@@ -23,7 +26,39 @@ body{
     width: 100%;
     height: 800px;
     position: relative;
+    display: grid;
+    
 }
+.fa-bars{
+    color: #ffba00;
+    font-size: 30px;
+    margin-right:100px;
+}
+@media (max-width:991px){
+    .nav a{
+        line-height: 80px;
+        animation: men-2 1s ease-in-out 1;
+        animation-delay:1s ;
+        display: flex;
+       
+    }
+    .nav{
+        animation: men 1s ease-in-out 1; 
+        background: rgba(0, 0, 0, 0.5) ;
+    }
+}
+
+@keyframes men{
+    0%{
+        transform: translateY(-500px);
+    }
+}
+@keyframes men-2{
+    0%{
+        transform: translateX(-500px);
+    }
+}
+
 .nav{
     justify-content: center;
     
@@ -60,29 +95,82 @@ body{
       
     }
 }
-.grand-opening{
-    margin: 0 auto;
-    text-align: center;
-    vertical-align: middle;
-    position: absolute;
-    top: 50%;
-    left: 0%;
-    color: #fff;
-    z-index: 10;
-    background:#ffba00;
-    display: flex;
+.grand-open{
+  display: grid;
+  color: #fff;
+  grid-template-columns: repeat(auto-fit,minmax(100px, 3fr ));
+  padding: 50px;
+  height: 200px;
+  align-content: center;
+  position: relative;
+}
+.grand-open::before{
+    content: '';
     width: 100%;
-    height: 20%;
-    animation: back 1s linear 1;
+    height: 180px;
+    position: absolute;
+    background: #ffba00;
+    top: -20px;
+    animation: grand 1s ease-in-out 1;
+    display: flex;
+}
+@keyframes grand{
+    0%{
+        transform: rotatex(90deg);
+        transform: rotatey(90deg);
+        
+    }
+    100%{
+        transform: rotateX(0deg);
+    }
+}
+.grand{
+    grid-column: 1/-1;
+    z-index: 10;
 }
 
+.open{
+    grid-column: 1/3;
+    z-index: 10;
+}
+.open h2{
+    font-size: 100px;
+    font-family: 'Montserrat', sans-serif;
+}
+.grand h1{
+    font-size: 100px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+.read-more{
+    z-index: 10;
+    margin-top: 15px;
+    font-size: 40px;
+    text-transform: uppercase;
+    background-color: #ffba00;
+    grid-column: 8/-4;
+    align-self: center !important;
+    padding: 15px;
+    border: 3px solid #fff;
+    text-align: center;
+    box-shadow: 5px 5px ;
+}
+.read-more:hover{
+    box-shadow: 0px 0px;
+    transition: 0.8s;
+}
+.read-more a{
+    color: #fff;
+    text-decoration: none !important;
+}
 .text-1{
     position: absolute;
-    left: 20%;
+    left: 10%;
     text-transform: uppercase;
 }
 .text-1 h1{
-    font-size: 80px;
+    font-size: 8vw;
     font-family: 'Montserrat Subrayada', sans-serif;
     font-weight: 700;
     letter-spacing: 25px;
@@ -90,43 +178,13 @@ body{
   
 }
 .text-1 h2{
-    font-size: 60px;
+    font-size: 4vw;
     font-family: 'Montserrat Subrayada', sans-serif;
     font-weight: 500;
     letter-spacing: 50px ;
     display: inline-block;
 }
-.read-more{
-  text-align: right;
-  background: #ffba00;
-  padding: 18px 40px;
-  border: 3px solid #fff;
-  margin-top: -100px !important;
-  margin-left: 790px;
-  color: #fff;
-  font-size: 25px;
-  display: flex;
-  box-shadow: 5px 5px;
-}
-.read-more:hover{
-    transition: 0.7s;
-    text-decoration: none;
-    transform: scale(1);
-   box-shadow: 0px 0px;
-   color: black;
-   border: none;
-}
-@keyframes back{
-    0%{
-        width: 0px;
-        justify-content: center;
-        transform: rotateX(00deg);
-    }
-    100%{
-        width: 100%;
-        transform: rotateX(360deg);
-    }
-}
+
 
 .container{
     background: #242424;
@@ -192,8 +250,96 @@ body{
 
 .format{
     background: #fff;
-    padding: 50px 150px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 50px;
+    padding: 150px;
+    justify-content: center;
+    text-align: left;
 }
 .format h1{
     color: #ffba00;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:800;
+    font-size: 40px;
+}
+.format p{
+    padding-top: 25px;
+    color: #242424;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+}
+.food-menu{
+    background-image: url("pizza-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: #ffba00;
+    position: relative;
+    padding: 50px !important;
+    
+}
+.food-menu::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 0 !important;
+}
+
+.food-text {
+    position: relative;
+    z-index: 1 !important;   
+}
+.food-text h2{
+    text-transform: uppercase;
+    border: 2px solid #fff;
+    display: inline-block;
+    padding: 20px;
+}
+.new-food-menu{
+    position: relative;
+    width: 80%;
+    z-index: 1;
+    display: grid;
+    grid-template-areas: 
+    ". . . li li li li pr ."
+    ;
+    grid-template-rows: auto 1fr;
+    text-align: left;
+    padding: 100px;
+    align-items: flex-end;
+    
+}
+.new-food-menu::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #ffba00;
+    width: 100%;
+    height: 63%;
+}
+.menu-list{
+    grid-area: li;
+    position: relative;
+    z-index: 10;
+    color: #fff;
+}
+.menu-price{
+    grid-area: pr;
+    line-height: 65px;
+    font-size: 22px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
 }
