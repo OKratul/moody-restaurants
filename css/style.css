@@ -552,7 +552,7 @@ body{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(auto ,100px));
     background: #483500;
-    justify-content:center;
+    justify-content:space-around;
     padding: 100px 100px;
     color: aliceblue;
 }
