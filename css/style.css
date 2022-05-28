@@ -163,16 +163,17 @@ body{
     }
     .grand h2{
         margin-left: 0px !important;
+        margin-bottom: 50px;
         font-size: 80px;
     }
 
     .read-more{
-        margin-top: 100px !important;
-        margin-left: 150px;
+        margin-left: 120px;
     }
     .grand-open::before{
         content: '';
         height: 150px;
+    }
     }
 @media (max-width:502px){
         .grand h1{
@@ -185,8 +186,27 @@ body{
     
         .read-more{
             margin-top: 100px !important;
-            margin-left: 110px;
+            margin-left: 80px !important;
         }
+
+}
+@media (max-width:430px){
+    .grand h1{
+        font-size: 70px;
+    }
+    .grand h2{
+        margin-right: 20px !important;
+        font-size: 70px;
+    }
+
+    .read-more{
+        margin-top: 100px !important;
+        margin-left: 0px !important;
+    }
+    .grand-open::before{
+        content: '';
+        height: 140px;
+    }
 
 }
 .text-1{
